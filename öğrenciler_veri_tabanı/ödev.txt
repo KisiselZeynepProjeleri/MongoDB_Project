@@ -1,0 +1,20 @@
+öğrencilerin okulun kantininde bazı almış olduğu eşyaları veri tabanında kayıt eden bir sistem ekleyin,
+
+1/ main.py de 5 tane document yani satır ekleyin fieldlar aşağıdaki gibi olsun;
+[
+        {"_id": 1, "item": "kalem", "price": 10, "quantity": 2, "date": dt.datetime.utcnow()},
+        {"_id": 2, "item": "silgi", "price": 20, "quantity": 1, "date": dt.datetime.utcnow()},
+        {"_id": 3, "item": "kalem", "price": 5, "quantity": 5, "date": dt.datetime.utcnow()},
+        {"_id": 4, "item": "sulu boya", "price": 10, "quantity": 10, "date": dt.datetime.utcnow()},
+        {"_id": 5, "item": "kalem", "price": 5, "quantity": 10, "date": dt.datetime.utcnow()}
+    ]
+
+{'_id':1,'item':'kalem','price':10,'miktar':2,date:datetime.datetime.utcnow()}
+
+2/ öğrenciler_veri_tabanı klasörünün içerisine stores_db.py isimli bir python dosyası oluşturun.
+içerisine StoresDB isimli bir sınıf oluşturun ve MongoDBConnect ten miras alsın
+__init__ methodunda collection ismi 'kantin' olsun
+Aşağıdaki methodlara sahip olsun:
+-bütün dataları veri tabanına atan bir method ekleyin
+-öğrencilerin almış olduğu ürünleri _id'ye atın ve ürün bazlı gruplama yaparak karşısında miktar ve fiyatı '$multiply' methoduyla çarparak '$avg' ile ortalamasını alacaksınız
+ve bunu 'ortalama_satış_miltarı' olarak bir field oluşturup atınız
